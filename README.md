@@ -1,4 +1,4 @@
-# Dockerhub Pull Statistics
+# Dockerhub Statistics
 * https://hub.docker.com/v2/repositories/egaillardon/
 ## Telegraf
 ### Documentation
