@@ -16,7 +16,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 2,
-  "iteration": 1547403578127,
+  "iteration": 1547408363482,
   "links": [
     {
       "icon": "external link",
@@ -25,6 +25,15 @@
       "title": "egaillardon's repositories",
       "type": "link",
       "url": "https://hub.docker.com/u/egaillardon"
+    },
+    {
+      "icon": "external link",
+      "tags": [],
+      "targetBlank": true,
+      "title": "raw dockerhub statistics",
+      "tooltip": "",
+      "type": "link",
+      "url": "https://hub.docker.com/v2/repositories/egaillardon/"
     }
   ],
   "panels": [
@@ -220,25 +229,20 @@
       {
         "allValue": "",
         "current": {
-          "text": "egaillardon",
-          "value": "egaillardon"
+          "isNone": true,
+          "text": "None",
+          "value": ""
         },
         "datasource": "prometheus",
         "definition": "label_values(dockerhub_status,namespace)",
-        "hide": 2,
+        "hide": 0,
         "includeAll": false,
         "label": "Namespace",
         "multi": true,
         "name": "namespace",
-        "options": [
-          {
-            "selected": true,
-            "text": "egaillardon",
-            "value": "egaillardon"
-          }
-        ],
+        "options": [],
         "query": "label_values(dockerhub_status,namespace)",
-        "refresh": 0,
+        "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
         "sort": 0,
@@ -251,7 +255,7 @@
     ]
   },
   "time": {
-    "from": "now-6M",
+    "from": "now-7d",
     "to": "now+1d"
   },
   "timepicker": {
@@ -282,5 +286,5 @@
   "timezone": "",
   "title": "Dockerhub Statistics",
   "uid": "W5XhC4Qik",
-  "version": 3
+  "version": 5
 }
