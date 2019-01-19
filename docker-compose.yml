@@ -6,8 +6,8 @@ services:
       dockerfile: Dockerfile
     environment:
       - TZ=Europe/Paris
-    ports:
-      - 9273:9273
+    # ports:
+    #   - 9273:9273
     restart: always
   prometheus:
     build:
@@ -17,8 +17,8 @@ services:
       - telegraf
     environment:
       - TZ=Europe/Paris
-    ports:
-      - 9090:9090
+    # ports:
+    #   - 9090:9090
     restart: always
     volumes:
       - prometheus-data:/prometheus
