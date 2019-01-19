@@ -1,25 +1,26 @@
 version: '3'
 services:
   telegraf:
-    image: telegraf:1.9.2-alpine
+    build:
+      context: telegraf
+      dockerfile: Dockerfile
     environment:
       - TZ=Europe/Paris
-    # ports:
-    #   - 9273:9273
+    ports:
+      - 9273:9273
     restart: always
-    volumes:
-      - $PWD/telegraf/configuration/telegraf.conf:/etc/telegraf/telegraf.conf:ro
   prometheus:
-    image: prom/prometheus:v2.6.0
+    build:
+      context: prometheus
+      dockerfile: Dockerfile
     depends_on:
       - telegraf
     environment:
       - TZ=Europe/Paris
-    # ports:
-    #   - 9090:9090
+    ports:
+      - 9090:9090
     restart: always
     volumes:
-      - $PWD/prometheus/configuration/prometheus.yml:/etc/prometheus/prometheus.yml:ro
       - prometheus-data:/prometheus
   grafana:
     build:
